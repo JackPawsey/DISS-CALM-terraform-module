@@ -1,0 +1,5 @@
+resource "aws_key_pair" "ssh_key" {
+  key_name   = "ssh_key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDylXSuHuU49an0ACcQrXHzCv8bp1Rhdyhks27599t5bl+OEysrIUBE2wdQNJWPHioX6Y6YJPHFJoNJYqsB0FxR2tq6kiOFt/vnM5ony1ElZ8MTcktPmeB4wx6gxGA9YOPN9Bpv5oRdtiOCuc00y3J3gTCUkzLWGLElHNqRHTCFOMIZT5uV550tfVD5Gfr1Ivh7hTHFgeQT+e49RyJyjL9L/W/FO/6tHdhhkQ5tEtI5XgIlcRi+EPbVITxLwaD+Gs4k0q41dR7siOh5zh8yEK2tN7aRMR9zENb9b95SMTB2PRjLBaOyaLqlKYVM7I/QeGcw0TnO1athvM0bn/ocGKFOuViY6wOxGNwcDMPFf9wc4TMMkVJYqM1rsNWgffne0crCvzaxKQ8l8ZAMY036oI59dTsWc7iGsC2B28FjtjoRik6U7hYlGmwgqPW8V9XkeOnNdzfKeiT1YOD7sNzkFjz/2iC5lfKDUmY1GW+KcLqLDUcF+tgaHBvAgERUfmqAh/Cqq4aBBtjDzLyQy+4I8jBp4BO7kS76XD+B2XBgQ7TD1/IY1J+UMjV1psD4WqB26pymyrNWEUMESnemyhjSTcJh1hInCpMp+jmHBKw6aqvSKbtiAjcl/cFRAl7Ao15ijrOw/MpZRHBaqlghmnnMdaBRkpCT4b2bdno/TmSHHnu0/w== personal_ec2_key"
+  tags       = merge({Name = "${local.prefix}-EC2 ssh key"}, local.common_tags)
+}
