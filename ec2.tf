@@ -2,7 +2,6 @@
 
 resource "aws_instance" "logstash_ec2" {
   ami                         = "ami-04d5cc9b88f9d1d39"
-  #availability_zone           = "eu-west-1a"
   availability_zone           = aws_subnet.public_subnet[0].availability_zone
   subnet_id                   = aws_subnet.public_subnet[0].id
   instance_type               = var.logstash_instance_type
@@ -18,7 +17,7 @@ resource "aws_instance" "logstash_ec2" {
 }
 
 resource "aws_ebs_volume" "logstash_block_storage" {
-  availability_zone = "eu-west-1a"
+  availability_zone = aws_subnet.public_subnet[0].availability_zone
   size              = 40
   encrypted         = true
 
@@ -36,7 +35,7 @@ resource "aws_volume_attachment" "logstash_storage_attachment" {
 
 resource "aws_instance" "prometheus_ec2" {
   ami                         = "ami-04d5cc9b88f9d1d39"
-  availability_zone           = "eu-west-1a"
+  availability_zone           = aws_subnet.public_subnet[0].availability_zone
   subnet_id                   = aws_subnet.public_subnet[0].id
   instance_type               = var.prometheus_instance_type
   vpc_security_group_ids      = [aws_security_group.prometheus_sg.id]
@@ -51,7 +50,7 @@ resource "aws_instance" "prometheus_ec2" {
 }
 
 resource "aws_ebs_volume" "prometheus_block_storage" {
-  availability_zone = "eu-west-1a"
+  availability_zone = aws_subnet.public_subnet[0].availability_zone
   size              = 40
   encrypted         = true
 
@@ -69,7 +68,7 @@ resource "aws_volume_attachment" "prometheus_storage_attachment" {
 
 resource "aws_instance" "alertmanager_ec2" {
   ami                         = "ami-04d5cc9b88f9d1d39"
-  availability_zone           = "eu-west-1a"
+  availability_zone           = aws_subnet.public_subnet[0].availability_zone
   subnet_id                   = aws_subnet.public_subnet[0].id
   instance_type               = var.alertmanager_instance_type
   vpc_security_group_ids      = [aws_security_group.alertmanager_sg.id]
@@ -83,7 +82,7 @@ resource "aws_instance" "alertmanager_ec2" {
 }
 
 resource "aws_ebs_volume" "alertmanager_block_storage" {
-  availability_zone = "eu-west-1a"
+  availability_zone = aws_subnet.public_subnet[0].availability_zone
   size              = 40
   encrypted         = true
 
@@ -101,7 +100,7 @@ resource "aws_volume_attachment" "alertmanager_storage_attachment" {
 
 resource "aws_instance" "grafana_ec2" {
   ami                         = "ami-04d5cc9b88f9d1d39"
-  availability_zone           = "eu-west-1a"
+  availability_zone           = aws_subnet.public_subnet[0].availability_zone
   subnet_id                   = aws_subnet.public_subnet[0].id
   instance_type               = var.grafana_instance_type
   vpc_security_group_ids      = [aws_security_group.grafana_sg.id]
@@ -115,7 +114,7 @@ resource "aws_instance" "grafana_ec2" {
 }
 
 resource "aws_ebs_volume" "grafana_block_storage" {
-  availability_zone = "eu-west-1a"
+  availability_zone = aws_subnet.public_subnet[0].availability_zone
   size              = 40
   encrypted         = true
 
