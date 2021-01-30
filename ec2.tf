@@ -46,7 +46,7 @@ resource "aws_instance" "prometheus_ec2" {
   depends_on                  = [aws_internet_gateway.internet_gateway]
   
   tags                        = merge({Name = "${local.prefix}-Prometheus"}, local.common_tags)
-  volume_tags                 = merge({Name = "${local.prefix}-Prometheus block storage"}, local.common_tags)
+  volume_tags                 = merge({Name = "${local.prefix}-Prometheus root volume"}, local.common_tags)
 }
 
 resource "aws_ebs_volume" "prometheus_block_storage" {
@@ -78,7 +78,7 @@ resource "aws_instance" "alertmanager_ec2" {
   depends_on                  = [aws_internet_gateway.internet_gateway]
   
   tags                        = merge({Name = "${local.prefix}-Alertmanager"}, local.common_tags)
-  volume_tags                 = merge({Name = "${local.prefix}-Alertmanager block storage"}, local.common_tags)
+  volume_tags                 = merge({Name = "${local.prefix}-Alertmanager root volume"}, local.common_tags)
 }
 
 resource "aws_ebs_volume" "alertmanager_block_storage" {
@@ -110,7 +110,7 @@ resource "aws_instance" "grafana_ec2" {
   depends_on                  = [aws_internet_gateway.internet_gateway]
   
   tags                        = merge({Name = "${local.prefix}-Grafana"}, local.common_tags)
-  volume_tags                 = merge({Name = "${local.prefix}-Grafana block storage"}, local.common_tags)
+  volume_tags                 = merge({Name = "${local.prefix}-Grafana root volume"}, local.common_tags)
 }
 
 resource "aws_ebs_volume" "grafana_block_storage" {
