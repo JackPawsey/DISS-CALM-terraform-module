@@ -67,6 +67,10 @@ resource "aws_elasticsearch_domain" "elasticsearch" {
     security_group_ids = [aws_security_group.elasticsearch_sg.id]
   }
 
+  timeouts {
+    update = "2h"
+  }
+
   access_policies = <<CONFIG
 {
     "Version": "2012-10-17",
