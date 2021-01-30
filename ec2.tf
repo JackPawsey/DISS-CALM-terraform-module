@@ -13,7 +13,7 @@ resource "aws_instance" "logstash_ec2" {
   depends_on                  = [aws_internet_gateway.internet_gateway]
   
   tags                        = merge({Name = "${local.prefix}-Logstash"}, local.common_tags)
-  volume_tags                 = merge({Name = "${local.prefix}-Logstash block storage"}, local.common_tags)
+  volume_tags                 = merge({Name = "${local.prefix}-Logstash root volume"}, local.common_tags)
 }
 
 resource "aws_ebs_volume" "logstash_block_storage" {
