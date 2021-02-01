@@ -3,6 +3,11 @@ output "env" {
   description = "The deployment environment"
 }
 
+output "name" {
+  value       = var.name
+  description = "The name of deployment"
+}
+
 output "logstash_instance_id" {
   value       = aws_instance.logstash_ec2.id
   description = "Logstash instance ID"
