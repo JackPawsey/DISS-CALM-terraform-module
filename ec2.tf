@@ -18,7 +18,7 @@ resource "aws_instance" "logstash_ec2" {
 
 resource "aws_ebs_volume" "logstash_block_storage" {
   availability_zone = aws_subnet.public_subnet[0].availability_zone
-  size              = 40
+  size              = var.logstash_storage_size
   encrypted         = true
 
   tags              = merge({Name = "${local.prefix}-Logstash block storage"}, local.common_tags)
@@ -51,7 +51,7 @@ resource "aws_instance" "prometheus_ec2" {
 
 resource "aws_ebs_volume" "prometheus_block_storage" {
   availability_zone = aws_subnet.public_subnet[0].availability_zone
-  size              = 40
+  size              = var.prometheus_storage_size
   encrypted         = true
 
   tags              = merge({Name = "${local.prefix}-Prometheus block storage"}, local.common_tags)
@@ -83,7 +83,7 @@ resource "aws_instance" "alertmanager_ec2" {
 
 resource "aws_ebs_volume" "alertmanager_block_storage" {
   availability_zone = aws_subnet.public_subnet[0].availability_zone
-  size              = 40
+  size              = var.alertmanager_storage_size
   encrypted         = true
 
   tags              = merge({Name = "${local.prefix}-Alertmanager block storage"}, local.common_tags)
@@ -115,7 +115,7 @@ resource "aws_instance" "grafana_ec2" {
 
 resource "aws_ebs_volume" "grafana_block_storage" {
   availability_zone = aws_subnet.public_subnet[0].availability_zone
-  size              = 40
+  size              = var.grafana_storage_size
   encrypted         = true
 
   tags              = merge({Name = "${local.prefix}-Grafana block storage"}, local.common_tags)
