@@ -42,8 +42,40 @@ variable "grafana_storage_size" {
   description = "Size of Grafana_ EC2 instance disk."
 }
 
-variable "elasticsearch_configuration" {
-  description = "The elasticsearch configuration to use."
+#variable "elasticsearch_configuration" {
+#  description = "The elasticsearch configuration to use."
+#}
+
+variable "es_data_instance_type" {
+  description = "The size of elasticsearch data nodes."
+}
+
+variable "es_data_node_count" {
+  description = "The number of elasticsearch data nodes."
+}
+
+variable "ebs_volume_size" {
+  description = "The disk size of elasticsearch data nodes."
+}
+
+variable "es_master_count" {
+  description = "The number of elasticsearch master nodes."
+  default     = null
+}
+
+variable "es_master_instance_type" {
+  description = "The size of elasticsearch master nodes."
+  default     = null
+}
+
+variable "es_rest_encryption" {
+  description = "Whether data is encrypted at rest inside elasticsearch."
+  default     = true
+}
+
+variable "es_node2node_encryption" {
+  description = "Whether data is encrypted between nodes inside elasticsearch."
+  default     = true
 }
 
 variable "zone_id" {
