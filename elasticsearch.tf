@@ -63,7 +63,7 @@ resource "aws_elasticsearch_domain" "elasticsearch" {
 
   vpc_options {
     #subnet_ids         = aws_subnet.public_subnet.*.id
-    subnet_ids         = var..es_data_node_count == 1 ? [aws_subnet.public_subnet[0].id] : aws_subnet.public_subnet[*].id
+    subnet_ids         = var.es_data_node_count == 1 ? [aws_subnet.public_subnet[0].id] : aws_subnet.public_subnet[*].id
     security_group_ids = [aws_security_group.elasticsearch_sg.id]
   }
 
