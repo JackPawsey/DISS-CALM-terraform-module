@@ -60,7 +60,7 @@ variable "ebs_volume_size" {
 
 variable "es_master_count" {
   description = "The number of elasticsearch master nodes."
-  default     = null
+  default     = 0
 }
 
 variable "es_master_instance_type" {
