@@ -38,7 +38,7 @@ variable "grafana_instance_type" {
   description = "Type of Grafana EC2 instance."
 }
 
-variable "grafana__storage_size" {
+variable "grafana_storage_size" {
   description = "Size of Grafana_ EC2 instance disk."
 }
 
