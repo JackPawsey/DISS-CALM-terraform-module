@@ -30,7 +30,7 @@
 resource "aws_elasticsearch_domain" "elasticsearch" {
   domain_name = "${local.prefix}-elasticsearch"
   
-  elasticsearch_version = "7.7"
+  elasticsearch_version = var.es_version
 
   cluster_config {
     instance_type            = var.es_data_instance_type
