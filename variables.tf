@@ -42,9 +42,10 @@ variable "grafana_storage_size" {
   description = "Size of Grafana_ EC2 instance disk."
 }
 
-#variable "elasticsearch_configuration" {
-#  description = "The elasticsearch configuration to use."
-#}
+variable "es_version" {
+  description = "The version of elasticsearch to use."
+  default     = "7.7"
+}
 
 variable "es_data_instance_type" {
   description = "The size of elasticsearch data nodes."
