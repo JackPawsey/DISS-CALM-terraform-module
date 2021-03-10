@@ -1,32 +1,3 @@
-#locals {
-#  elasticsearch_configurations = {
-#    prod = {
-#      data_instance_type            = "m5.large.elasticsearch"
-#      elasticsearch_data_node_count = 3
-#      ebs_enabled                   = true
-#      encrypt_at_rest               = true
-#      node_to_node_encryption       = true
-#      dedicated_master_enabled      = true
-#      dedicated_master_count        = 3
-#      dedicated_master_type         = "m5.large.elasticsearch"
-#    }
-#
-#    staging = {
-#      data_instance_type            = "t2.small.elasticsearch"
-#      elasticsearch_data_node_count = 1
-#      ebs_enabled                   = true
-#      volume_size                   = 10
-#      encrypt_at_rest               = false # t2.small clusters don't support encryption at rest
-#      node_to_node_encryption       = false # t2.small clusters don't support encryption
-#      dedicated_master_enabled      = false
-#    }
-#  }
-#
-#  es-name = "${local.prefix}-es"
-#
-#  selected_es_config = local.elasticsearch_configurations[var.elasticsearch_configuration]
-#}
-
 resource "aws_elasticsearch_domain" "elasticsearch" {
   domain_name = "${local.prefix}-elasticsearch"
   
@@ -62,7 +33,6 @@ resource "aws_elasticsearch_domain" "elasticsearch" {
   }
 
   vpc_options {
-    #subnet_ids         = aws_subnet.public_subnet.*.id
     subnet_ids         = var.es_data_node_count == 1 ? [aws_subnet.public_subnet[0].id] : aws_subnet.public_subnet[*].id
     security_group_ids = [aws_security_group.elasticsearch_sg.id]
   }
