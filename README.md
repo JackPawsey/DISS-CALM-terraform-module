@@ -4,7 +4,7 @@
 
 | Variable Name | Description | Default Value |
 | --- | --- | --- |
-| name | Name of deployment |  |
+| name | Name of deployment | **required** |
 | env | Environment of deployment |  |
 | region | Region of deployment |  |
 | logstash_instance_type | Type of Logstash EC2 instance | "t2.small" |
@@ -26,7 +26,3 @@
 | zone_id | ID of hosted zone to create DNS records in |  |
 | vpc_cidr | CIDR block of the VPC |  |
 | subnets | A map of availability zones to CIDR blocks, which will be set up as subnets |  |
-
-
-### GitLab Orange Heading
-{: .gitlab-orange}
