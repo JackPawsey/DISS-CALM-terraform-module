@@ -4,7 +4,7 @@
 
 | Variable Name | Description | Default Value |
 | --- | --- | --- |
-| name | Name of deployment | `#F00 required` |
+| name | Name of deployment | `#F00` |
 | env | Environment of deployment |  |
 | region | Region of deployment |  |
 | logstash_instance_type | Type of Logstash EC2 instance | "t2.small" |
