@@ -8,38 +8,47 @@ variable "env" {
 
 variable "region" {
   description = "Region of deployment."
+  default     = "eu-west-1"
 }
 
 variable "logstash_instance_type" {
   description = "Type of Logstash EC2 instance."
+  default     = "t2.small"
 }
 
 variable "logstash_storage_size" {
   description = "Size of Logstash EC2 instance disk."
+  default     = "10"
 }
 
 variable "prometheus_instance_type" {
   description = "Type of Prometheus EC2 instance."
+  default     = "t2.small"
 }
 
 variable "prometheus_storage_size" {
   description = "Size of Prometheus EC2 instance disk."
+  default     = "10"
 }
 
 variable "alertmanager_instance_type" {
   description = "Type of Alertmanager EC2 instance."
+  default     = "t2.small"
 }
 
 variable "alertmanager_storage_size" {
   description = "Size of Alertmanager EC2 instance disk."
+  default     = "10"
 }
 
 variable "grafana_instance_type" {
   description = "Type of Grafana EC2 instance."
+  default     = "t2.small"
 }
 
 variable "grafana_storage_size" {
   description = "Size of Grafana_ EC2 instance disk."
+  default     = "10"
 }
 
 variable "es_version" {
@@ -49,14 +58,17 @@ variable "es_version" {
 
 variable "es_data_instance_type" {
   description = "The size of elasticsearch data nodes."
+  default     = "t2.small.elasticsearch"
 }
 
 variable "es_data_node_count" {
   description = "The number of elasticsearch data nodes."
+  default     = "1"
 }
 
 variable "ebs_volume_size" {
   description = "The disk size of elasticsearch data nodes."
+  default     = "10"
 }
 
 variable "es_master_count" {
