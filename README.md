@@ -28,7 +28,6 @@ Variables:
 
 
 | Variable Name | Description | Default Value|
-| ---      |  ------  |----------|
 | name | Name of deployment |  |
 | env | Environment of deployment |  |
 | region | Region of deployment |  |
