@@ -4,7 +4,8 @@
 
 | Variable Name | Description | Default Value |
 | --- | --- | --- |
-| name | Name of deployment | <span color="red">text</span> |
+| name | Name of deployment | ### GitLab Orange Heading
+{: .gitlab-orange} |
 | env | Environment of deployment |  |
 | region | Region of deployment |  |
 | logstash_instance_type | Type of Logstash EC2 instance | "t2.small" |
