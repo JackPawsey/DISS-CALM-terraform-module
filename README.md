@@ -5,8 +5,11 @@
 | Variable Name | Description | Default Value |
 | --- | --- | --- |
 | name | Name of deployment | **required** |
-| env | Environment of deployment |  |
-| region | Region of deployment |  |
+| env | Environment of deployment | **required** |
+| region | Region of deployment | **required** |
+| zone_id | ID of hosted zone to create DNS records in | **required** |
+| vpc_cidr | CIDR block of the VPC | **required** |
+| subnets | A map of availability zones to CIDR blocks, which will be set up as subnets | **required** |
 | logstash_instance_type | Type of Logstash EC2 instance | "t2.small" |
 | logstash_storage_size | Size of Logstash EC2 instance disk | "10" |
 | prometheus_instance_type | Type of Prometheus EC2 instance | "t2.small" |
@@ -23,6 +26,3 @@
 | es_master_instance_type | The size of elasticsearch master nodes | null |
 | es_rest_encryption | Whether data is encrypted at rest inside elasticsearch | true |
 | es_node2node_encryption | Whether data is encrypted between nodes inside elasticsearch | true |
-| zone_id | ID of hosted zone to create DNS records in |  |
-| vpc_cidr | CIDR block of the VPC |  |
-| subnets | A map of availability zones to CIDR blocks, which will be set up as subnets |  |
