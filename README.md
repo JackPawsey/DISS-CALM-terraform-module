@@ -2,10 +2,10 @@
 
 Variables:
 
-name: Name of deployment\
-env: Environment of deployment\
-region: Region of deployment\
-logstash_instance_type: Type of Logstash EC2 instance - default: "t2.small"\
+- name: Name of deployment\
+- env: Environment of deployment\
+- region: Region of deployment\
+- logstash_instance_type: Type of Logstash EC2 instance - default: "t2.small"\
 logstash_storage_size: Size of Logstash EC2 instance disk - default: "10"
 prometheus_instance_type: Type of Prometheus EC2 instance - default: "t2.small"
 prometheus_storage_size: Size of Prometheus EC2 instance disk - default: "10"
