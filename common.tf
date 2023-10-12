@@ -4,7 +4,6 @@ locals {
     environment       = "${var.env}"
     system            = "${var.name}"
     automated         = "True"
-    maintainer_email  = "jfrewer@live.co.uk"
   })
 }
 

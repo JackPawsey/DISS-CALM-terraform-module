@@ -1,7 +1,13 @@
-# Terraform Module
+# DISS-CALM-terraform-module
+Final year uni dissertation
 
-## Variables:
+Terraform module to create CALM stack within an AWS account
 
+## About
+Sets up network with VPC, subnets, route tables and internet gateway  
+Provisions four EC2 instances with DNS names and an AWS managed Elasticsearch cluster
+
+## Variables
 | Variable Name | Description | Default Value |
 | --- | --- | --- |
 | name | Name of deployment | **required** |
@@ -26,3 +32,24 @@
 | es_master_instance_type | The size of elasticsearch master nodes | null |
 | es_rest_encryption | Whether data is encrypted at rest inside elasticsearch | true |
 | es_node2node_encryption | Whether data is encrypted between nodes inside elasticsearch | true |
+
+## Resources
+- aws_vpc
+- aws_subnet
+- aws_security_group
+- aws_security_group_rule
+- aws_s3_bucket
+- aws_route53_record
+- aws_route_table
+- aws_route_table_association
+- aws_internet_gateway
+- aws_iam_instance_profile
+- aws_iam_role
+- aws_iam_policy_document
+- aws_iam_role_policy_attachment
+- aws_iam_role_policy
+- aws_elasticsearch_domain
+- aws_instance
+- aws_ebs_volume
+- aws_volume_attachment
+- aws_key_pair

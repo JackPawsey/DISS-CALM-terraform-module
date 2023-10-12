@@ -103,7 +103,3 @@ variable "subnets" {
   description = "A map of availability zones to CIDR blocks, which will be set up as subnets."
   type = map
 }
-
-#variable "es_days_to_retain" {
-#  description = "Days to retain data in ES."
-#}
